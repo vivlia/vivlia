@@ -1,0 +1,42 @@
+<div id="page-wrapper">
+
+	<div class="container-fluid">
+
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Books Posted</h1>
+				<ol class="breadcrumb">
+					<li class="active"><i class="fa fa-dashboard"></i>
+						{{finalData.data.firstName}} {{finalData.data.lastName}}</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<a href="#/postAAdd"><button class="btn btn-primary">Post
+							An Add For A Book</button></a> <br /> <br />
+				</div>
+			</div>
+			<div class="row" ng-controller="UploadBookRequest">
+
+				<div ng-repeat="data in bookData.data"
+					class="col-lg-3 col-md-4 col-xs-6 thumb">
+					<a class="thumbnail" href="#">
+					<div class="caption">
+                    	<h4>{{data.bookName}}</h4>
+                    	<p>{{data.authorName}}</p>
+                    </div>
+					 <img class="img-responsive"
+						src="data:image/jpg;base64,{{data.image}}" alt="">
+					</a>
+				</div>
+			</div>
+
+			<hr>
+		</div>
+	</div>
+</div>
+
